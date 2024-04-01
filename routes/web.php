@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\PageController;
 use App\Http\Controllers\DcController;
+
+
 
 use Illuminate\Support\Facades\Route;
 
@@ -15,4 +18,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::resource('dcs', DcController::class);
+route::get('/', function () {
+    return view('home');
+})->name('home');
+
+Route::get('/dcs', [DcController::class, 'index'])->name('dcs.index');

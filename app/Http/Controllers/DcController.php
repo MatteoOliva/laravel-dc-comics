@@ -10,17 +10,18 @@ class DcController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+
      */
     public function index()
     {
-        //
+                $dcs = Dc::all();
+            return view('dcs.index', compact('dcs'));
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     
      */
     public function create()
     {
@@ -31,7 +32,7 @@ class DcController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     
      */
     public function store(Request $request)
     {
@@ -42,7 +43,7 @@ class DcController extends Controller
      * Display the specified resource.
      *
      * @param  \App\Models\Dc  $dc
-     * @return \Illuminate\Http\Response
+     
      */
     public function show(Dc $dc)
     {
@@ -53,7 +54,7 @@ class DcController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  \App\Models\Dc  $dc
-     * @return \Illuminate\Http\Response
+     
      */
     public function edit(Dc $dc)
     {
@@ -65,7 +66,7 @@ class DcController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Dc  $dc
-     * @return \Illuminate\Http\Response
+     
      */
     public function update(Request $request, Dc $dc)
     {
@@ -76,7 +77,7 @@ class DcController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\Dc  $dc
-     * @return \Illuminate\Http\Response
+     
      */
     public function destroy(Dc $dc)
     {
