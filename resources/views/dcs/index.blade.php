@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
 @section('main-content')
-  <section class="container mt-5">
+  <section>
+    <div class="container py-4">
    <h1>comics</h1>
 
    <table class="table">
@@ -20,10 +21,13 @@
             <td>{{ $dc->description }}</td>
             <td>{{ $dc->series }}</td>
             <td>{{ $dc->earnings }}</td>
+            <td>
+                <a href="{{ route('dcs.show', $dc) }}">show</a>
+            </td>
         </tr>
         @endforeach
     </tbody>
 </table>
-
+</div>
   </section>
 @endsection

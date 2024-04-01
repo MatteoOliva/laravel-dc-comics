@@ -23,3 +23,4 @@ route::get('/', function () {
 })->name('home');
 
 Route::get('/dcs', [DcController::class, 'index'])->name('dcs.index');
+Route::get('/dcs/{dc}', [DcController::class, 'show'])->name('dcs.show');

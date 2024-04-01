@@ -47,7 +47,7 @@ class DcController extends Controller
      */
     public function show(Dc $dc)
     {
-        //
+        return view('dcs.show', compact('dc'));
     }
 
     /**
