@@ -12,8 +12,14 @@ class DcSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run( Faker $faker)
     {
-        //
+        for($i = 0; $i < 10; $i++) {
+            $dc = New Dc;
+            $dc->title = $faker->title();
+            $dc->description = $faker->paragraph(8);
+            $dc->series = $faker->randomElement(['yes', 'not']);
+            $dc->earnings = $faker->numberBetween([9999999, 999999999]);
+        }
     }
 }
