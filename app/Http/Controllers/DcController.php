@@ -25,7 +25,7 @@ class DcController extends Controller
      */
     public function create()
     {
-        //
+        return view('dcs.create');
     }
 
     /**
@@ -36,7 +36,18 @@ class DcController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+
+        $dc = new Dc;
+
+        $dc->title = $data["title"];
+        $dc->description = $data["description"];
+        $dc->series = $data["series"];
+        $dc->earnings = $data["earnings"];
+
+
+        $dc->save();
+        return redirect()->route('dcs.show', $dc);
     }
 
     /**
