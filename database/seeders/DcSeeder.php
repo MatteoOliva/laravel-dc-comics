@@ -2,8 +2,10 @@
 
 namespace Database\Seeders;
 
+use App\Models\Dc;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Faker\Generator as Faker;
 
 class DcSeeder extends Seeder
 {
@@ -12,7 +14,7 @@ class DcSeeder extends Seeder
      *
      * @return void
      */
-    public function run( Faker $faker)
+    public function run(Faker $faker)
     {
         for($i = 0; $i < 10; $i++) {
             $dc = New Dc;
@@ -20,6 +22,7 @@ class DcSeeder extends Seeder
             $dc->description = $faker->paragraph(8);
             $dc->series = $faker->randomElement(['yes', 'not']);
             $dc->earnings = $faker->numberBetween([9999999, 999999999]);
+            $dc->save();
         }
     }
 }
